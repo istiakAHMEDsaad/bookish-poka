@@ -34,9 +34,9 @@ const Footers = () => {
               <input
                 type='text'
                 placeholder='username@site.com'
-                className='input input-bordered join-item'
+                className=' input-bordered join-item pl-2'
               />
-              <button className='btn btn-primary join-item'>Subscribe</button>
+              <button className='primary-btn py-3 btn-primary join-item'>Subscribe</button>
             </div>
           </fieldset>
         </form>
