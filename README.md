@@ -1,8 +1,8 @@
-# React + Vite
+# Bookish Poka
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+_Deploy Link -->_
 
-Currently, two official plugins are available:
+## [_website_](https://bookish-poka-simplewebsite.surge.sh/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot](./src/assets/ss.png)
+
