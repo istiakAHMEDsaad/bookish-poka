@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .primary-btn {
+    @apply lg:px-6 lg:py-3 md:px-4 md:py-2 px-2 py-1  rounded-md bg-[#23BE0A] hover:bg-[#23BE0A]/80 transition-all text-white text-lg font-semibold cursor-pointer;
+  }
+  .secondary-btn{
+    @apply lg:px-6 lg:py-3 md:px-4 md:py-2 px-2 py-1  rounded-md bg-[#59C6D2] hover:bg-[#59C6D2]/80 transition-all text-white text-lg font-semibold cursor-pointer;
+  }
+}
+
+body{
+  /* font-family: "Playfair Display", "serif"; */
+  font-family: "Work Sans", "serif";
+}
