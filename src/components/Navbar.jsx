@@ -1,8 +1,22 @@
-import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const links = (
+    <>
+      <li>
+        <NavLink to={'/'}>Home</NavLink>
+      </li>
+      <li>
+        <a>Listed Books</a>
+      </li>
+      <li>
+        <NavLink to={'dashboard'}>Pages to Read</NavLink>
+      </li>
+    </>
+  );
+
   return (
-    <div>
+    <div className='mb-5'>
       {/* ========== Nav Bar ========== */}
       <div className='navbar bg-base-100'>
         <div className='navbar-start'>
@@ -28,15 +42,7 @@ const Navbar = () => {
               tabIndex={0}
               className='menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 shadow'
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Listed Books</a>
-              </li>
-              <li>
-                <a>Pages to Read</a>
-              </li>
+              {links}
             </ul>
           </div>
           <a className='btn btn-ghost text-xl md:text-2xl lg:text-3xl'>
@@ -45,17 +51,7 @@ const Navbar = () => {
         </div>
         {/* ========== Large Device Navbar ========== */}
         <div className='navbar-center hidden lg:flex'>
-          <ul className='menu menu-horizontal px-1 md:text-lg'>
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Listed Books</a>
-            </li>
-            <li>
-              <a>Pages to Read</a>
-            </li>
-          </ul>
+          <ul className='menu menu-horizontal px-1 md:text-lg'>{links}</ul>
         </div>
         <div className='navbar-end space-x-2'>
           <a className='primary-btn'>Sign In</a>
