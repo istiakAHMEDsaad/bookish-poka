@@ -1,5 +1,5 @@
 import { Link, useLoaderData, useParams } from 'react-router-dom';
-import { addToStoredReadList } from '../utility/addToDb';
+import { addToStoredReadList, addToStoredWishList } from '../utility/addToDb';
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -23,6 +23,10 @@ const BookDetails = () => {
     rating,
   } = book;
 
+  const handleMarkAsWishList = (id) => {
+    addToStoredWishList(id);
+  }
+  
   const handleMarkedAsRead = (id) => {
     addToStoredReadList(id);
   };
@@ -75,14 +79,14 @@ const BookDetails = () => {
         <hr className='border-b border-gray-200  ' />
 
         {/* ---------- Book Description ---------- */}
-        <div className='flex'>
-          <div className='basis-1/4 text-gray-500 space-y-3'>
+        <div className='flex md:gap-x-0 gap-x-3'>
+          <div className='md:basis-1/4 text-gray-500 space-y-3'>
             <p>Number of Pages:</p>
             <p>Publisher:</p>
             <p>Year of Publishing:</p>
             <p>Rating:</p>
           </div>
-          <div className='basis-3/4 font-semibold text-black space-y-3'>
+          <div className='md:basis-3/4 font-semibold text-black space-y-3'>
             <p>{totalPages}</p>
             <p>{publisher}</p>
             <p>{yearOfPublishing}</p>
@@ -92,17 +96,27 @@ const BookDetails = () => {
 
         {/* ---------- Button ---------- */}
         <div className='flex gap-x-4'>
-          <Link to={`https://www.amazon.com/s?k=${encodeURIComponent(bookName)}`} rel="noopener noreferrer">
-            <button className='border border-gray-400 px-5 py-2 rounded-md hover:bg-black hover:text-white transition-all text-lg font-bold'>
-              Read
-            </button>
-          </Link>
           <button
             onClick={() => handleMarkedAsRead(bookId)}
+            className='border border-gray-400 px-5 py-2 rounded-md hover:bg-black hover:text-white transition-all text-lg font-bold'
+          >
+            Read
+          </button>
+
+          <button
+            onClick={() => handleMarkAsWishList(bookId)}
             className='text-lg font-bold px-5 py-2 rounded-md bg-[#50B1C9] hover:bg-[#50B1C9]/80 text-white/90 active:scale-95 transition-all'
           >
             Wishlist
           </button>
+          <Link
+            to={`https://www.amazon.com/s?k=${encodeURIComponent(bookName)}`}
+            rel='noopener noreferrer'
+          >
+            <button className='text-lg font-bold px-5 py-2 rounded-md bg-[#fdfe03] hover:bg-[#fdfe03]/70 active:scale-105 transition-all'>
+              Buy
+            </button>
+          </Link>
         </div>
       </div>
     </div>
