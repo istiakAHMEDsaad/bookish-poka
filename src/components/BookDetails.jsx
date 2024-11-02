@@ -1,4 +1,5 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { addToStoredReadList } from '../utility/addToDb';
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -21,6 +22,11 @@ const BookDetails = () => {
     yearOfPublishing,
     rating,
   } = book;
+
+  const handleMarkedAsRead = (id) => {
+    addToStoredReadList(id);
+  };
+
   return (
     <div className='my-10 flex flex-col md:flex-row'>
       {/* 1 */}
@@ -86,10 +92,15 @@ const BookDetails = () => {
 
         {/* ---------- Button ---------- */}
         <div className='flex gap-x-4'>
-          <button className='border border-gray-400 px-5 py-2 rounded-md hover:bg-black hover:text-white transition-all text-lg font-bold'>
-            Read
-          </button>
-          <button className='text-lg font-bold px-5 py-2 rounded-md bg-[#50B1C9] hover:bg-[#50B1C9]/80 text-white/90'>
+          <Link to={`https://www.amazon.com/s?k=${encodeURIComponent(bookName)}`} rel="noopener noreferrer">
+            <button className='border border-gray-400 px-5 py-2 rounded-md hover:bg-black hover:text-white transition-all text-lg font-bold'>
+              Read
+            </button>
+          </Link>
+          <button
+            onClick={() => handleMarkedAsRead(bookId)}
+            className='text-lg font-bold px-5 py-2 rounded-md bg-[#50B1C9] hover:bg-[#50B1C9]/80 text-white/90 active:scale-95 transition-all'
+          >
             Wishlist
           </button>
         </div>

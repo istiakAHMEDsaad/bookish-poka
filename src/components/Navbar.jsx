@@ -45,7 +45,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className='btn btn-ghost text-xl md:text-2xl lg:text-3xl'>
+          <a className='btn btn-ghost text-xl md:text-2xl lg:text-3xl text-start'>
             Book Vibe
           </a>
         </div>
