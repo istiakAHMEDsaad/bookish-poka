@@ -2,7 +2,7 @@
 
 _Deploy Link -->_
 
-## [_website_](https://bookish-poka-simplewebsite.surge.sh/)
+## [_website_](https://bookish_poka_react_simple_project.surge.sh/)
 
 ![Screenshot](./src/assets/ss.png)
 
@@ -28,3 +28,7 @@ _Deploy Link -->_
 2. ```cd dist```
 3. ```cp index.html 200.html```
 4. ```surge```
+
+## Tearing down a published website
+1. ```npm install --global surge```
+2. ```surge teardown {deploy site link}```
