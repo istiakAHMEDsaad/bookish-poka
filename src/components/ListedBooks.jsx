@@ -9,6 +9,7 @@ import {
   FaBookOpen,
   FaAngleDown,
 } from 'react-icons/fa6';
+import { Helmet } from 'react-helmet-async';
 
 const ListedBooks = () => {
   const allBooks = useLoaderData();
@@ -82,6 +83,9 @@ const ListedBooks = () => {
 
   return (
     <div>
+      <Helmet>
+      <title>Bookish Poka | List books</title>
+      </Helmet>
       <div className='md:p-10 py-10 bg-gray-100 rounded-lg mb-5'>
         <h2 className='text-3xl font-bold text-center'>Books</h2>
       </div>

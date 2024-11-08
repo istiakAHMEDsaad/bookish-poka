@@ -12,6 +12,7 @@ import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import BookDetails from './components/BookDetails';
 import ListedBooks from './components/ListedBooks';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
-    <RouterProvider router={router}></RouterProvider>
-    <ToastContainer></ToastContainer>
+    <HelmetProvider>
+      <RouterProvider router={router}></RouterProvider>
+      <ToastContainer></ToastContainer>
+    </HelmetProvider>
   </StrictMode>
 );

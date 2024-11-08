@@ -1,6 +1,7 @@
 import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { addToStoredReadList, addToStoredWishList } from '../utility/addToDb';
 import { FaArrowLeft } from 'react-icons/fa6';
+import { Helmet } from 'react-helmet-async';
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -38,6 +39,9 @@ const BookDetails = () => {
 
   return (
     <>
+    <Helmet>
+    <title>Bookish Poka | Details</title>
+    </Helmet>
       <div className='px-5'>
         <button onClick={handleBackBtn} className='flex items-center gap-x-1 secondary-btn active:scale-105 transition-all'>
           <span className='text-base'>

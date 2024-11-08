@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 import {
   Bar,
@@ -43,6 +44,9 @@ const Dashboard = () => {
 
   return (
     <div className='flex items-center justify-center'>
+      <Helmet>
+      <title>Bookish Poka | Dashboard</title>
+      </Helmet>
       <div className='w-full max-w-4xl'>
         <ResponsiveContainer width='100%' height={500}>
           <BarChart
